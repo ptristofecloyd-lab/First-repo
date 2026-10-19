@@ -3,9 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Midterm Exam - Pineda </title>
 </head>
 <body>
-    <h1>Hello Github</h1>
+    <div>
+<button id="myButton" class="my-button">-</button>
+    <h1 id="myHeading" class="my-heading">Value</h1>
+    <button id="myButton2" class="my-button">+</button>
+
+        <style>
+            .my-button {
+                padding: 10px 20px;
+                font-size: 30px;
+                cursor: pointer;
+                align-items: center;
+                align-content: center;
+            }
+            .my-heading {
+                font-size: 30px;
+                margin: 20px;
+                align-items: center;
+            }
+
+        </style>
+    </div>
+
+
+
+    <h1 Color Switcher></h1>
+    <button id="redButton">Red</button>
+    <button id="blueButton">Blue</button>
+    <button id="greenButton">Green</button>   
+    <style>
+        #redButton {
+            background-color: red;
+            color: black;
+            padding: 10px 20px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        #blueButton {
+            background-color: blue;
+            color: black;
+            padding: 10px 20px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        #greenButton {
+            background-color: green;
+            color: black;
+            padding: 10px 20px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    
+    </style>
+    
+   
+    <div>   
+    <h1 id="myHeading2" class="my-heading">Year</h1>
+    <function></function> 
+    </div>
+
+    <input type="number" id="myInput" class="my-input" placeholder="Enter Year">
+    <style>
+        .my-input {
+            padding: 5px;
+            font-size: 15px;
+            margin: 5px;
+        }
+
+        
+        
+
+    </style>
+
+    <h1 id="myHeading3" class="my-heading">Display age</h1>
+    <result id="myResult" class="">_________________</result>
+    <div>
+        <button id="myButton4" class="my-button">Compute</button>
+
+    </div>
+   
+
+
+
+
+    <!-- <style>
+        .my-button {
+            padding: 10px 20px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .my-heading {
+            font-size: 30px;
+            margin: 20px;
+        }
+        /* .red {
+            background-color: red;
+            color: black;
+        }
+        .blue {
+            background-color: blue;
+            color: black;
+        }
+        .green {
+            background-color: green;
+            color: Black;
+        } */
+
+    </style>  -->
+
+    <script>
+
+        const myButton = document.getElementById('myButton');
+        const myHeading = document.getElementById('myHeading');
+        const myButton2 = document.getElementById('myButton2');
+
+        let value = 0;
+
+        myButton.addEventListener('click', () => {
+            value--;
+            myHeading.textContent = value;
+        });
+
+        myButton2.addEventListener('click', () => {
+            value++;
+            myHeading.textContent = value;
+        });
+
+        const redButton = document.getElementById('redButton');
+        const blueButton = document.getElementById('blueButton');
+        const greenButton = document.getElementById('greenButton');
+
+        redButton.addEventListener('click', () => {
+            document.body.style.backgroundColor = 'red';
+        });
+
+        blueButton.addEventListener('click', () => {
+            document.body.style.backgroundColor = 'blue';
+        });
+
+        greenButton.addEventListener('click', () => {
+            document.body.style.backgroundColor = 'green';
+        });
+
+        const myInput = document.getElementById('myInput');
+        const myResult = document.getElementById('myResult');
+        const myButton4 = document.getElementById('myButton4');
+
+        myButton4.addEventListener('click', () => {
+            const year = parseInt(myInput.value);
+            if (!isNaN(year)) {
+                const currentYear = new Date().getFullYear();
+                const age = currentYear - year;
+                myResult.textContent = ` ${age}`;
+            } else {
+                myResult.textContent = 'Please enter a valid year.';
+            }
+        });
+    </script>
 </body>
 </html>
